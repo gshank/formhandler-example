@@ -1,0 +1,5 @@
+<h2>Rendering the Twitter Bootstrap basic form</h2>
+
+<p><a href="/bootstrap/basic/native">All HTML</a></p>
+<p><a href="/bootstrap/basic/auto_render">HFH Auto Rendered</a></p>
+<p><a href="/bootstrap/basic/tt_render">TT & HFH Rendered</a></p>
