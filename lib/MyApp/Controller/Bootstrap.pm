@@ -4,6 +4,8 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use MyApp::Form::Basic;
+
 =head1 NAME
 
 MyApp::Controller::Bootstrap - Catalyst Controller
@@ -16,6 +18,11 @@ Catalyst Controller.
 
 =cut
 
+sub auto : Private {
+    my ( $self, $c ) = @_;
+    $c->stash( bootstrap => 1 );
+}
+
 
 =head2 index
 
@@ -26,6 +33,20 @@ sub index :Path :Args(0) {
 
 #   $c->response->body('Matched MyApp::Controller::Bootstrap in Bootstrap.');
 }
+
+
+sub basic :Path('basic') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    my $form1 = MyApp::Form::Basic->new( html_prefix => 1, name => 'form1' );
+    $form1->process($c->req->body_parameters);
+    my $form2 = MyApp::Form::Basic->new( html_prefix => 1, name => 'form2', widget_wrapper => 'None' );
+    $form2->process($c->req->body_parameters);
+    my $form3 = MyApp::Form::Basic->new( html_prefix => 1, name => 'form3' );
+    $form3->process($c->req->body_parameters);
+    $c->stash( form1 => $form1, form2 => $form2, form3 => $form3 );
+}
+
 
 
 =head1 AUTHOR
