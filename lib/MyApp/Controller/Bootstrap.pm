@@ -5,6 +5,7 @@ use namespace::autoclean;
 BEGIN {extends 'Catalyst::Controller'; }
 
 use MyApp::Form::Basic;
+use MyApp::Form::Controls;
 
 =head1 NAME
 
@@ -47,6 +48,18 @@ sub basic :Path('basic') :Args(0) {
     $c->stash( form1 => $form1, form2 => $form2, form3 => $form3 );
 }
 
+
+sub controls :Path('controls') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    my $form1 = MyApp::Form::Controls->new( html_prefix => 1, name => 'form1' );
+    $form1->process($c->req->body_parameters);
+    my $form2 = MyApp::Form::Controls->new( html_prefix => 1, name => 'form2', widget_wrapper => 'None' );
+    $form2->process($c->req->body_parameters);
+    my $form3 = MyApp::Form::Controls->new( html_prefix => 1, name => 'form3' );
+    $form3->process($c->req->body_parameters);
+    $c->stash( form1 => $form1, form2 => $form2, form3 => $form3 );
+}
 
 
 =head1 AUTHOR

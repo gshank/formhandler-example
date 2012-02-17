@@ -1,0 +1,133 @@
+<h3>Bootstrap Controls form
+<div class="row">
+  <div class="span3">
+      <p>Rendered entirely with HTML; no HFH rendering at all</p>
+  </div>
+  <div class="span8">
+    <form class="form-horizontal" id="control_form" method="post">
+      <fieldset>
+        <legend>Controls Bootstrap supports</legend>
+        <div class="control-group">
+          <label class="control-label" for="input01">Text input</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" id="input01" name="input01" value="" />
+            <p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="optionsCheckbox">Checkbox</label>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" id="optionsCheckbox" name="optionsCheckbox" value="option1" />
+              Option one is this and that&mdash;be sure to include why it’s great
+            </label>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="select01">Select list</label>
+          <div class="controls">
+            <select id="select01" name="select01">
+              <option value="1" id="select01.0">1</option>
+              <option value="2" id="select01.1">2</option>
+              <option value="3" id="select01.2">3</option>
+              <option value="4" id="select01.3">4</option>
+              <option value="5" id="select01.4">5</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="multiSelect">Multi-select</label>
+          <div class="controls">
+            <select multiple="multiple" id="multiSelect" name="multiSelect" size="5">
+              <option value="1" id="multiSelect.0">1</option>
+              <option value="2" id="multiSelect.1">2</option>
+              <option value="3" id="multiSelect.2">3</option>
+              <option value="4" id="multiSelect.3">4</option>
+              <option value="5" id="multiSelect.4">5</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="fileInput">File input</label>
+          <div class="controls">
+            <input class="input-file" id="fileInput" name="fileInput" type="file" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="textarea">Textarea</label>
+          <div class="controls">
+            <textarea class="input-xlarge" id="textarea" name="textarea" cols="20" rows="4"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button id="actions.save" name="actions.save" type="submit" class="btn btn-primary">Save changes</button>
+          <button id="actions.cancel" name="actions.cancel" type="reset" class="btn">Cancel</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div> <!-- row -->
+
+<div class="row">
+  <div class="span3">
+    <p>Layout is done in the template; the form elements are rendered with FormHandler</p>
+  </div>
+  <div class="span8">
+    <form class="form-horizontal" id="control_form" method="post">
+      <fieldset>
+        <legend>Controls Bootstrap supports</legend>
+        <div class="control-group">
+          <label class="control-label" for="input01">Text input</label>
+          <div class="controls">
+            [% form2.field('input01').render %]
+            <p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="optionsCheckbox">Checkbox</label>
+          <div class="controls">
+            <label class="checkbox">
+              [% form2.field('optionsCheckbox').render %]
+              Option one is this and that&mdash;be sure to include why it’s great
+            </label>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="select01">Select list</label>
+          <div class="controls">
+            [% form2.field('select01').render %]
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="multiSelect">Multi-select</label>
+          <div class="controls">
+            [% form2.field('multiSelect').render %]
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="fileInput">File input</label>
+          <div class="controls">
+            [% form2.field('fileInput').render %]
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="textarea">Textarea</label>
+          <div class="controls">
+            [% form2.field('textarea').render %]
+          </div>
+        </div>
+        <div class="form-actions">
+          <button id="actions.save" name="actions.save" type="submit" class="btn btn-primary">Save changes</button>
+          <button id="actions.cancel" name="actions.cancel" type="reset" class="btn">Cancel</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span3">
+     <p>Rendered entirely with FormHandler...</p>
+  </div>
+[% form3.render %]
+</div> <!-- row -->
