@@ -1,0 +1,7 @@
+[% PROCESS site/book_nav.tt %]
+<div class="row">
+<h2>Book Form</h2>
+</div>
+<div class="row">
+[% form.render %]
+</div>

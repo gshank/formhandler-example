@@ -1,0 +1,26 @@
+[% PROCESS site/book_nav.tt %]
+<div class="row">
+<h2>List of Books</h2>
+</div>
+<div class="row">
+<table id="books" class="table table-bordered table-striped" summary="The list of all books">
+  <tr>
+    [% FOR column IN columns %]
+    <th scope="col">[% column %]</th>
+    [% END %]
+    <th/>
+  </tr>
+  [% FOR book IN books %]
+  <tr>
+    [% FOR column IN columns %]
+    <td>[% book.$column %]</td>
+    [% END %]
+    <td>
+      <a href="[% '/book/' _ book.id  %]">View</a>
+      <a href="[% '/book/' _ book.id _ '/edit' %]">Edit</a>
+      <a href="[% '/book/' _ book.id _ '/delete' %]">Delete</a>
+    </td>
+  </tr>[% END %]
+</table>
+<p><a class="big" href="[% '/book/create' %]">+ ADD</a></p>
+</div>

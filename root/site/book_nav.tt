@@ -1,0 +1,8 @@
+<div class="row">
+<ul class="nav nav-tabs">
+  <li><a href="/book/create">Add Book</a></li>
+  <li><a href="/book/list">List Books</a></li>
+  <li><a href="/borrower/add">Add Borrower</a></li>
+  <li><a href="/borrower/list">List Borrowers</a></li>
+</ul>
+</div>

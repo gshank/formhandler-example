@@ -1,0 +1,17 @@
+[% PROCESS site/book_nav.tt %]
+<div class="row">
+<h2>Borrower</h2>
+</div>
+<div class="row">
+<p>[%message%]</p>
+[% FOR field IN form.error_fields %]
+  [% FOR error IN field.errors %]
+    <div class='error' id=error>[% error %] </div>
+  [% END %]
+[% END %]
+
+[% form.render %]
+
+<p><a class="big" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
+
+</div>
