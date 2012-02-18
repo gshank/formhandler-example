@@ -16,7 +16,7 @@ sub build_form_tags {
 
 sub build_update_subfields {{
    # wrap the fields with a label but no tag
-   all => { render_wrapper => 0, render_label => 1 },
+   all => { do_wrapper => 0, do_label => 1 },
    foo => { element_class => ['span3'], element_attr => { placeholder => 'Type something…' },
        tags => { after_element => '<span class="help-inline">Associated help text!</span>' } },
    bar => { label => 'Check me out', label_class => ['checkbox'], tags => { checkbox_single_label => 1 }},
