@@ -4,7 +4,7 @@ use Moose::Role;
 with 'HTML::FormHandler::Widget::Theme::Bootstrap';
 
 # widget wrapper must be set before the fields are built in BUILD
-sub build_render_form_wrapper {1}
+sub build_do_form_wrapper {1}
 sub build_form_wrapper_class {['span8']}
 sub build_form_tags {{
     wrapper_tag => 'div',
