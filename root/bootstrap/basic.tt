@@ -27,7 +27,7 @@
     <form class="well">
       <label for="form2.foo">Label name</label>
       [% form2.field('foo').render %]<span class="help-inline">Associated help text!</span>
-      <label class="checkbox" for="form2.foo">
+      <label class="checkbox" for="form2.bar">
         [% form2.field('bar').render %] Check me out
       </label>
       [% form2.field('submit_btn').render %]
