@@ -19,7 +19,7 @@ sub build_update_subfields {{
    all => { do_wrapper => 0, do_label => 1 },
    foo => { element_class => ['span3'], element_attr => { placeholder => 'Type something…' },
        tags => { after_element => '<span class="help-inline">Associated help text!</span>' } },
-   bar => { label => 'Check me out', label_class => ['checkbox'], tags => { checkbox_single_label => 1 }},
+   bar => { option_label => 'Check me out', do_label => 0 },
    submit_btn => { element_class => ['btn'] },
 }}
 
