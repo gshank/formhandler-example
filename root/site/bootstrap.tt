@@ -29,8 +29,8 @@
   <div class="row">
     <ul class="nav nav-pills">
      <li[% ' class="active"' IF (c.req.path.match("\^\$")) %]><a href="[% c.uri_for('/') %]">Home</a></li>
-     <li[% ' class="active"' IF (c.req.path.match("^bookdb")) %]><a href="[% c.uri_for('/bookdb/book') %]">Book Example</a></li>
-     <li[% ' class="active"' IF (c.req.path.match("^bootstrap")) %]><a href="[% c.uri_for('/bootstrap') %]">Bootstrap Examples</a></li>
+     <li[% ' class="active"' IF (c.req.path.match("^bookdb")) %]><a href="[% c.uri_for('/bookdb/book/') %]">Book Example</a></li>
+     <li[% ' class="active"' IF (c.req.path.match("^bootstrap")) %]><a href="[% c.uri_for('/bootstrap/') %]">Bootstrap Examples</a></li>
     </ul>
   </div>
 
