@@ -1,4 +1,2 @@
-<h1>Forms using the Twitter Bootstrap framework</h1>
-
-<p><a href="/bootstrap/basic">Basic Form</a></p>
-<p><a href="/bootstrap/controls">Bootstrap Controls Form</a></p>
+[% INCLUDE site/bootstrap_nav.tt %]
+<p>Bootstrap 2.0 Examples rendered using FormHandler</p>

@@ -1,4 +1,4 @@
-package MyApp::Controller::Book;
+package MyApp::Controller::BookDB::Book;
 
 use Moose;
 BEGIN {
@@ -24,7 +24,7 @@ Book Controller
 
 =cut
 
-sub book_base : Chained PathPart('book') CaptureArgs(0)
+sub book_base : Chained PathPart('bookdb/book') CaptureArgs(0)
 {
    my ( $self, $c ) = @_;
     $c->stash( bootstrap => 1 );
@@ -49,14 +49,16 @@ sub do_list
    my $books = [ $c->model('DB::Book')->all ];
    my @columns = ( 'title', 'author_list', 'publisher', 'year' );
    $c->stash( books => $books, columns => \@columns,
-              template => 'book/list.tt' );
+              template => 'bookdb/book/list.tt' );
 }
 
 sub create : Chained('book_base') PathPart('create') Args(0)
 {
    my ( $self, $c ) = @_;
    # Create the empty book row for the form
-   $c->stash( book => $c->model('DB::Book')->new_result({}) );
+   my $book = $c->model('DB::Book')->new_result({});
+$DB::single=1;
+   $c->stash( book => $book );
    return $self->form($c);
 }
 
@@ -80,7 +82,7 @@ sub form
       params => $c->req->parameters,
       action => $c->uri_for($c->action, $c->req->captures ),
    );
-   $c->stash( template => 'book/form.tt', form => $result );
+   $c->stash( template => 'bookdb/book/form.tt', form => $result );
    return unless $result->validated;
    $c->res->redirect( $c->uri_for('list') );
 }

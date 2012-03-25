@@ -1,8 +1,9 @@
 <div class="row">
 <ul class="nav nav-tabs">
-  <li><a href="/book/create">Add Book</a></li>
-  <li><a href="/book/list">List Books</a></li>
-  <li><a href="/borrower/add">Add Borrower</a></li>
-  <li><a href="/borrower/list">List Borrowers</a></li>
+  <li[% ' class="active"' IF (c.req.path.match("bookdb/book/create")) %]><a href="/bookdb/book/create">Add Book</a></li>
+  <li[% ' class="active"' IF ( c.req.path.match("bookdb/book/list") || c.req.path.match("bookdb/book/\$") ) %]>
+      <a href="/bookdb/book/list">List Books</a></li>
+  <li[% ' class="active"' IF (c.req.path.match("bookdb/borrower/add")) %]><a href="/bookdb/borrower/add">Add Borrower</a></li>
+  <li[% ' class="active"' IF (c.req.path.match("bookdb/borrower/list")) %]><a href="/bookdb/borrower/list">List Borrowers</a></li>
 </ul>
 </div>

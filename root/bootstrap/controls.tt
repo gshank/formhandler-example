@@ -1,3 +1,4 @@
+[% INCLUDE site/bootstrap_nav.tt %]
 <h3>Bootstrap Controls form
 <div class="row">
   <div class="span3">

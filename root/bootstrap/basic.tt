@@ -1,3 +1,4 @@
+[% INCLUDE site/bootstrap_nav.tt %]
 <h3>Basic form</h3>
 
 <div class="row">

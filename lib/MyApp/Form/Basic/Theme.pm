@@ -6,9 +6,9 @@ sub build_form_wrapper_class { ['span9'] }
 sub build_form_element_class { ['well'] }
 sub build_do_form_wrapper {1}
 sub build_form_tags {
-    # wrap the form with outside div (form_wrapper = 1, form_wrapper_tag = div)
+    # wrap the form with outside div (form_wrapper = 1, wrapper_tag = div)
     # wrap the fields (to get label) but with no wrapping div ( wrapper_tag => 0 )
-    {   form_wrapper_tag => 'div',
+    {   wrapper_tag => 'div',
         before => qq{<div class="row"><div class="span3"><p>Form completely rendered with FormHandler.</p></div>\n},
         after => '</div>',
     }

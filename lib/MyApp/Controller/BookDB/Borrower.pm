@@ -1,4 +1,4 @@
-package MyApp::Controller::Borrower;
+package MyApp::Controller::BookDB::Borrower;
 
 use Moose;
 BEGIN {
@@ -20,7 +20,7 @@ Controller for Borrower
 =cut
 
 
-sub borrower_base : Chained PathPart('borrower') CaptureArgs(0)
+sub borrower_base : Chained PathPart('bookdb/borrower') CaptureArgs(0)
 {
    my ( $self, $c ) = @_;
    $c->stash( bootstrap => 1 );
@@ -45,7 +45,7 @@ sub do_list
    my $borrowers = [ $c->model('DB::Borrower')->all ];
    my @columns = ( 'name', 'email' );
    $c->stash( borrowers => $borrowers, columns => \@columns,
-              template => 'borrower/list.tt' );
+              template => 'bookdb/borrower/list.tt' );
 }
 
 sub add : Chained('borrower_base') PathPart('add') Args(0)
@@ -72,7 +72,7 @@ sub form
 {
    my ( $self, $c ) = @_;
 
-   $c->stash( form => $self->my_form, template => 'borrower/form.tt',
+   $c->stash( form => $self->my_form, template => 'bookdb/borrower/form.tt',
       action => $c->uri_for($c->action, $c->req->captures ));
    return unless $self->my_form->process( item => $c->stash->{borrower},
       params => $c->req->parameters );
@@ -92,7 +92,7 @@ sub view : Chained('item') PathPart('') Args(0)
    my ( $self, $c, $id ) = @_;
 
    my @columns = ( 'name', 'email', 'phone', 'url', 'active' );
-   $c->stash( columns => \@columns, template => 'borrower/view.tt' );
+   $c->stash( columns => \@columns, template => 'bookdb/borrower/view.tt' );
 }
 
 
