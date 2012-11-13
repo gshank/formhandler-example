@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>BookDB</title>
-<link href="[% c.uri_for('/scaffold/styles.css') %]" rel="stylesheet" type="text/css" />
+<link href="[% c.uri_for('/static/css/styles.css') %]" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
