@@ -1,6 +1,8 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
+<div class="page-header">
 <h2>List of Borrowers</h2>
+</div>
 </div>
 <div class="row">
 <table id="borrowers" class="table table-bordered table-striped">
@@ -15,11 +17,11 @@
       <td>[% borrower.$column %]</td>
     [% END %]
     <td>
-      <a href="[% '/borrower/' _ borrower.id %]">View</a>
-      <a href="[% '/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
-      <a href="[% '/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
+      <a href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
+      <a href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
+      <a href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
     </td>
   </tr>[% END %]
 </table>
-<p><a class="big" href="/borrower/add">+ ADD</a></p>
+<p><a class="btn btn-primary" href="/borrower/add">+ ADD</a></p>
 </div>

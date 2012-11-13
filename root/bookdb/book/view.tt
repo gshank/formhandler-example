@@ -38,6 +38,6 @@
    </p>
 <br />
 
-<p><a class="big" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
+<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
 
 </div>

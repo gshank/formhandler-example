@@ -26,14 +26,16 @@ has_field 'title' => (
     label            => 'Title',
 );
 has_field 'authors' => (
-    type  => 'Multiple',
-    label => 'Authors',
+    type   => 'Multiple',
+    label  => 'Authors',
+    widget => 'CheckboxGroup',
 );
 
 has_field 'genres' => (
     type         => 'Multiple',
     label        => 'Genres',
     label_column => 'name',
+    widget       => 'CheckboxGroup',
 );
 
 has_field 'publisher' => (
