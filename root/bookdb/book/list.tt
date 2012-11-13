@@ -24,5 +24,5 @@
     </td>
   </tr>[% END %]
 </table>
-<p><a class="btn btn-primary" href="[% '/book/create' %]">+ ADD</a></p>
+<p><a class="btn btn-primary" href="[% '/bookdb/book/create' %]">+ ADD</a></p>
 </div>
