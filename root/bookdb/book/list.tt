@@ -1,6 +1,8 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
+<div class="page-header">
 <h2>List of Books</h2>
+</div>
 </div>
 <div class="row">
 <table id="books" class="table table-bordered table-striped" summary="The list of all books">
@@ -22,5 +24,5 @@
     </td>
   </tr>[% END %]
 </table>
-<p><a class="big" href="[% '/book/create' %]">+ ADD</a></p>
+<p><a class="btn btn-primary" href="[% '/book/create' %]">+ ADD</a></p>
 </div>

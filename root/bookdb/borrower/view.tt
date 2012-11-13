@@ -1,6 +1,8 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
-  <h2>Borrower</h2>
+  <div class="page-header">
+    <h2>Borrower</h2>
+  </div>
 </div>
 <div class="row">
 [% FOR column IN columns %]
@@ -16,12 +18,12 @@
     <tr>
       <td>[% book.title %]</td>
       <td>[% book.borrowed %]</td>
-      <td><a href="[% '/book/' _ book.id %]">View</a>
-          <a href="[% '/book/' _ book.id _ '/return' %]">Return</a></td>
+      <td><a href="[% '/bookdb/book/' _ book.id %]">View</a>
+          <a href="[% '/bookdb/book/' _ book.id _ '/return' %]">Return</a></td>
     </tr>
 [% END %]
 </table>
 
-<p><a class="big" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
+<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
 
 </div>

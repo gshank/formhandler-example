@@ -1,8 +1,11 @@
 [% INCLUDE site/bootstrap_nav.tt %]
-<h3>Bootstrap Controls form
+<div class="page-header">
+<h3>Bootstrap Controls form</h3>
+</div>
+
 <div class="row">
   <div class="span3">
-      <p>Rendered entirely with HTML; no HFH rendering at all</p>
+    <p>Rendered entirely with HTML; no HTML::FormHandler rendering at all</p>
   </div>
   <div class="span8">
     <form class="form-horizontal" id="control_form" method="post">
@@ -69,6 +72,8 @@
   </div>
 </div> <!-- row -->
 
+<hr>
+
 <div class="row">
   <div class="span3">
     <p>Layout is done in the template; the form elements are rendered with FormHandler</p>
@@ -126,9 +131,11 @@
   </div>
 </div>
 
+<hr>
+
 <div class="row">
   <div class="span3">
-     <p>Rendered entirely with FormHandler...</p>
+     <p>Rendered entirely with FormHandler!</p>
   </div>
 [% form3.render %]
 </div> <!-- row -->

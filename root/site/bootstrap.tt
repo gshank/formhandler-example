@@ -24,7 +24,9 @@
   <body data-offset="50">
   <div class="container">
   <div class="row">
-  <h2>HTML::FormHandler Catalyst Examples</h2>
+    <div class="page-header">
+      <h2>HTML::FormHandler Catalyst Examples</h2>
+    </div>
   </div>
   <div class="row">
     <ul class="nav nav-pills">
