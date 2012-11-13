@@ -2,7 +2,7 @@ package MyApp::Form::Captcha;
 
 use HTML::FormHandler::Moose;
 extends qw/HTML::FormHandler/;
-with 'HTML::FormHandler::TraitFor::Captcha';
+#with 'HTML::FormHandler::TraitFor::Captcha';
 #with qw/
 #    HTML::FormHandler::Render::Simple
 #    HTML::FormHandler::TraitFor::Captcha

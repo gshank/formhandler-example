@@ -1,8 +1,9 @@
+<div class="row">
 <p>This application demonstrates the use of HTML::FormHandler, a Perl form package.<p>
 <p>See: <a href="http://metacpan.org/module/HTML::FormHandler">HTML::FormHandler</a><p>
 
-<p>HTML::FormHandler maintains a clean separation between form construction
-and form rendering. It allows you to define your forms and fields in a
+<p>HTML::FormHandler maintains a <b>clean separation</b> between form <b>construction</b>
+and form <b>rendering</b>. It allows you to define your forms and fields in a
 number of flexible ways. Although it provides renderers for HTML, you
 can define custom renderers for any kind of presentation.</p>
 
@@ -26,3 +27,4 @@ validations, transformations and Moose type constraints.
 You can write custom methods to process forms, add any attribute you like,
 use Moose method modifiers.  FormHandler forms are Perl classes, so there's
 a lot of flexibility in what you can do.</p>
+</div>

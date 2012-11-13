@@ -1,0 +1,8 @@
+---
+www:
+    type: perl
+    requirements:
+        - 'Module::Install::Catalyst'
+        - 'Plack::Builder'
+        - 'Plack::Middleware::BufferedStreaming'
+    postbuild: ln -s /home/dotcloud/current/root/static/ /home/dotcloud/current/
