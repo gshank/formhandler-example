@@ -98,7 +98,7 @@ is_html($rendered, $expected, 'textarea renders ok' );
 # actions
 $expected =
 '<div class="form-actions">
-  <button id="form_actions.save" name="form_actions.save" type="submit" class="btn primary">Save changes</button>
+  <button id="form_actions.save" name="form_actions.save" type="submit" class="btn btn-primary">Save changes</button>
   <button id="form_actions.cancel" name="form_actions.cancel" type="reset" class="btn">Cancel</button>
 </div>';
 $rendered = $form->field('form_actions')->render;
@@ -162,7 +162,7 @@ $expected = '
             </div>
           </div>
           <div class="form-actions">
-            <button id="form_actions.save" name="form_actions.save" type="submit" class="btn primary">Save changes</button>
+            <button id="form_actions.save" name="form_actions.save" type="submit" class="btn btn-primary">Save changes</button>
             <button id="form_actions.cancel" name="form_actions.cancel" type="reset" class="btn">Cancel</button>
           </div>
         </fieldset>
