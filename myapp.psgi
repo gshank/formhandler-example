@@ -1,8 +1,12 @@
+#!/usr/bin/env perl
+
 use strict;
 use warnings;
-
+use lib 'lib';
 use MyApp;
+use Plack::Builder;
 
-my $app = MyApp->apply_default_middlewares(MyApp->psgi_app);
-$app;
-
+builder {
+    enable 'Plack::Middleware::BufferedStreaming';
+    MyApp->psgi_app(@_);
+};
