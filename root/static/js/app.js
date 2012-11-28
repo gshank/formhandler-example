@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // enable tablesorter
-  $('.tablesorter').tablesorter();
+  $('.tablesorter').tablesorter({});
 
   // jquery validation
   if ($('#validation_json').length > 0) {
