@@ -23,5 +23,5 @@
     </td>
   </tr>[% END %]
 </table>
-<p><a class="btn btn-primary" href="/borrower/add">+ ADD</a></p>
+<p><a class="btn btn-primary" href="/bookdb/borrower/add">+ ADD</a></p>
 </div>
