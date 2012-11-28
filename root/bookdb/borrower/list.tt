@@ -5,23 +5,29 @@
 </div>
 </div>
 <div class="row">
-<table id="borrowers" class="table table-bordered table-striped">
-  <tr>
-    [% FOR column IN columns %]
-      <th>[% column.as_label %]</th>
+<table id="borrowers" class="table table-bordered table-striped tablesorter">
+  <thead>
+    <tr>
+      [% FOR column IN columns %]
+        <th>[% column.as_label %]</th>
+      [% END %]
+      <th/>
+    </tr>
+  </thead>
+  <tbody>
+    [% FOR borrower IN borrowers %]
+    <tr>
+      [% FOR column IN columns %]
+        <td>[% borrower.$column %]</td>
+      [% END %]
+      <td>
+        <a href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
+        <a href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
+        <a href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
+      </td>
+    </tr>
     [% END %]
-    <th/>
-  </tr>[% FOR borrower IN borrowers %]
-  <tr>
-    [% FOR column IN columns %]
-      <td>[% borrower.$column %]</td>
-    [% END %]
-    <td>
-      <a href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
-      <a href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
-      <a href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
-    </td>
-  </tr>[% END %]
+  </tbody>
 </table>
 <p><a class="btn btn-primary" href="/bookdb/borrower/add">+ ADD</a></p>
 </div>
