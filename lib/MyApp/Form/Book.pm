@@ -1,6 +1,6 @@
 package MyApp::Form::Book;
 use HTML::FormHandler::Moose;
-extends 'HTML::FormHandler::Model::DBIC';
+extends 'MyApp::Form::Base';
 with 'HTML::FormHandler::Widget::Theme::Bootstrap';
 
 =head1 NAME
