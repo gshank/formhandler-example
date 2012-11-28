@@ -14,7 +14,10 @@ sub default_validation_json { shift->as_escaped_json }
 
 sub html_attributes {
     my ( $self, $field, $type, $attr ) = @_;
-    $field->{label} .= ' *' if $type eq 'label' && $field->{required};
+    if ($type eq 'label' && $field->{required}) {
+        my $label = $field->{label};
+        $field->{label} = "$label *" unless $label =~ /\*$/;
+    }
     return $attr;
 }
 
