@@ -14,17 +14,20 @@
       <th/>
     </tr>
   </thead>
-  [% FOR book IN books %]
-  <tr>
-    [% FOR column IN columns %]
-    <td>[% book.$column %]</td>
+  <tbody>
+    [% FOR book IN books %]
+    <tr>
+      [% FOR column IN columns %]
+      <td>[% book.$column %]</td>
+      [% END %]
+      <td>
+        <a href="[% '/bookdb/book/' _ book.id  %]">View</a>
+        <a href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
+        <a href="[% '/bookdb/book/' _ book.id _ '/delete' %]">Delete</a>
+      </td>
+    </tr>
     [% END %]
-    <td>
-      <a href="[% '/bookdb/book/' _ book.id  %]">View</a>
-      <a href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
-      <a href="[% '/bookdb/book/' _ book.id _ '/delete' %]">Delete</a>
-    </td>
-  </tr>[% END %]
+  </tbody>
 </table>
 <p><a class="btn btn-primary" href="[% '/bookdb/book/create' %]">+ ADD</a></p>
 </div>

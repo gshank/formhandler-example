@@ -14,17 +14,20 @@
       <th/>
     </tr>
   </thead>
-  [% FOR borrower IN borrowers %]
-  <tr>
-    [% FOR column IN columns %]
-      <td>[% borrower.$column %]</td>
+  <tbody>
+    [% FOR borrower IN borrowers %]
+    <tr>
+      [% FOR column IN columns %]
+        <td>[% borrower.$column %]</td>
+      [% END %]
+      <td>
+        <a href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
+        <a href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
+        <a href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
+      </td>
+    </tr>
     [% END %]
-    <td>
-      <a href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
-      <a href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
-      <a href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
-    </td>
-  </tr>[% END %]
+  </tbody>
 </table>
 <p><a class="btn btn-primary" href="/bookdb/borrower/add">+ ADD</a></p>
 </div>
