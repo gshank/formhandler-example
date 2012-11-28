@@ -21,5 +21,4 @@ sub html_attributes {
     return $attr;
 }
 
-
 1;
