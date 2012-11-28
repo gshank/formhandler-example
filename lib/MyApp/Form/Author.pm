@@ -1,7 +1,7 @@
 package MyApp::Form::Author;
 
 use HTML::FormHandler::Moose;
-extends 'HTML::FormHandler::Model::DBIC';
+extends 'MyApp::Form::Base';
 
 has '+item_class' => ( default => 'Author' );
 

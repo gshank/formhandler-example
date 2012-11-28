@@ -8,7 +8,7 @@
 <table id="borrowers" class="table table-bordered table-striped">
   <tr>
     [% FOR column IN columns %]
-      <th>[% column %]</th>
+      <th>[% column.as_label %]</th>
     [% END %]
     <th/>
   </tr>[% FOR borrower IN borrowers %]
@@ -23,5 +23,5 @@
     </td>
   </tr>[% END %]
 </table>
-<p><a class="btn btn-primary" href="/borrower/add">+ ADD</a></p>
+<p><a class="btn btn-primary" href="/bookdb/borrower/add">+ ADD</a></p>
 </div>
