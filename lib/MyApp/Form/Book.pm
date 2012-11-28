@@ -1,6 +1,6 @@
 package MyApp::Form::Book;
 use HTML::FormHandler::Moose;
-extends 'HTML::FormHandler::Model::DBIC';
+extends 'MyApp::Form::Base';
 with 'HTML::FormHandler::Widget::Theme::Bootstrap';
 
 =head1 NAME
@@ -50,14 +50,16 @@ has_field 'isbn' => (
     unique => 1,
 );
 has_field 'format' => (
-    type  => 'Select',
-    label => 'Format',
+    type     => 'Select',
+    label    => 'Format',
+    required => 1,
 );
 has_field 'year' => (
     type        => 'Integer',
     range_start => '1900',
     range_end   => '2020',
     label       => 'Year',
+    required    => 1,
 );
 has_field 'pages' => (
     type  => 'Integer',

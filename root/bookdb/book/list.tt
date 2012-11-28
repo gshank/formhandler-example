@@ -8,7 +8,7 @@
 <table id="books" class="table table-bordered table-striped" summary="The list of all books">
   <tr>
     [% FOR column IN columns %]
-    <th scope="col">[% column %]</th>
+    <th scope="col">[% column.as_label %]</th>
     [% END %]
     <th/>
   </tr>

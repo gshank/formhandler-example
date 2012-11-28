@@ -1,7 +1,7 @@
 package MyApp::Form::Borrower;
 
 use HTML::FormHandler::Moose;
-extends 'HTML::FormHandler::Model::DBIC';
+extends 'MyApp::Form::Base';
 with 'HTML::FormHandler::Widget::Theme::Bootstrap';
 
 
