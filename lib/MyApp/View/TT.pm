@@ -4,12 +4,21 @@ use strict;
 use warnings;
 
 use base 'Catalyst::View::TT';
+use Template::Stash;
 
 __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.tt',
     render_die => 1,
     WRAPPER => 'site/wrapper.tt',
 );
+
+Template::Stash->define_vmethod('scalar', 'as_label' => \&as_label);
+
+sub as_label {
+    my $column = shift;
+    $column =~ s/_/ /g;
+    return ucfirst($column);
+}
 
 =head1 NAME
 

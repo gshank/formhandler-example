@@ -8,7 +8,7 @@
 <table id="borrowers" class="table table-bordered table-striped">
   <tr>
     [% FOR column IN columns %]
-      <th>[% column %]</th>
+      <th>[% column.as_label %]</th>
     [% END %]
     <th/>
   </tr>[% FOR borrower IN borrowers %]
