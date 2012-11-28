@@ -5,13 +5,15 @@
 </div>
 </div>
 <div class="row">
-<table id="books" class="table table-bordered table-striped" summary="The list of all books">
-  <tr>
-    [% FOR column IN columns %]
-    <th scope="col">[% column.as_label %]</th>
-    [% END %]
-    <th/>
-  </tr>
+<table id="books" class="table table-bordered table-striped tablesorter" summary="The list of all books">
+  <thead>
+    <tr>
+      [% FOR column IN columns %]
+      <th scope="col">[% column.as_label %]</th>
+      [% END %]
+      <th/>
+    </tr>
+  </thead>
   [% FOR book IN books %]
   <tr>
     [% FOR column IN columns %]

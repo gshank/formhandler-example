@@ -5,13 +5,16 @@
 </div>
 </div>
 <div class="row">
-<table id="borrowers" class="table table-bordered table-striped">
-  <tr>
-    [% FOR column IN columns %]
-      <th>[% column.as_label %]</th>
-    [% END %]
-    <th/>
-  </tr>[% FOR borrower IN borrowers %]
+<table id="borrowers" class="table table-bordered table-striped tablesorter">
+  <thead>
+    <tr>
+      [% FOR column IN columns %]
+        <th>[% column.as_label %]</th>
+      [% END %]
+      <th/>
+    </tr>
+  </thead>
+  [% FOR borrower IN borrowers %]
   <tr>
     [% FOR column IN columns %]
       <td>[% borrower.$column %]</td>
