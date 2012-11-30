@@ -45,9 +45,10 @@ has_field 'publisher' => (
 
 # has_many relationship pointing to mapping table
 has_field 'isbn' => (
-    type   => 'Text',
-    label  => 'ISBN',
-    unique => 1,
+    type     => 'Text',
+    label    => 'ISBN',
+    unique   => 1,
+    required => 1,
 );
 has_field 'format' => (
     type     => 'Select',

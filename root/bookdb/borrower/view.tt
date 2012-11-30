@@ -24,6 +24,6 @@
 [% END %]
 </table>
 
-<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
+<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all borrowers</a></p>
 
 </div>

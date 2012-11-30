@@ -1,8 +1,8 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
-<div class="page-header">
-<h2>List of Borrowers</h2>
-</div>
+  <div class="page-header">
+    <h3>List of Borrowers</h3>
+  </div>
 </div>
 <div class="row">
 <table id="borrowers" class="table table-bordered table-striped tablesorter">
@@ -29,5 +29,5 @@
     [% END %]
   </tbody>
 </table>
-<p><a class="btn btn-primary" href="/bookdb/borrower/add">+ ADD</a></p>
+<p><a class="btn btn-primary" href="/bookdb/borrower/add">Add borrower</a></p>
 </div>

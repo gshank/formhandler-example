@@ -1,43 +1,49 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
-
-<p>[% message %]</p>
-   <p>
-    <b class="title">Title:</b>
-    <p>[% book.title %]</p>
-   </p>
-   <p>
-    <b class="title">Author:</b>
-    <p>[% book.author %]</p>
-   </p>
-   <p>
-    <b class="title">Genres:</b>
-    [% FOR genre IN book.genres %]
-    <p>[% genre.name %]</p>
-    [% END %]
-   </p>
-   <p>
-    <b class="title">Publisher:</b>
-    <p>[% book.publisher %]</p>
-   </p>
-   <p>
-    <b class="title">ISBN:</b>
-    <p>[% book.isbn %]</p>
-   </p>
-   <p>
-    <b class="title">Format:</b>
-    <p>[% book.format.name %]</p>
-   </p>
-   <p>
-    <b class="title">Pages:</b>
-    <p>[% book.pages %]</p>
-   </p>
-   <p>
-    <b class="title">Year:</b>
-    <p>[% book.year %]</p>
-   </p>
-<br />
-
-<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">&gt; LIST</a></p>
-
+  <div class="span3 thumbnail">
+    [% IF book.isbn %]<img src="http://covers.openlibrary.org/b/isbn/[% book.isbn %]-L.jpg" />[% END %]
+  </div>
+  
+  <div class="span8">
+    <p>[% message %]</p>
+    <p>
+     <b class="title">Title:</b>
+     <p>[% book.title %]</p>
+    </p>
+    <p>
+     <b class="title">Author:</b>
+     <p>[% book.author %]</p>
+    </p>
+    <p>
+     <b class="title">Genres:</b>
+     [% FOR genre IN book.genres %]
+     <p>[% genre.name %]</p>
+     [% END %]
+    </p>
+    <p>
+     <b class="title">Publisher:</b>
+     <p>[% book.publisher %]</p>
+    </p>
+    <p>
+     <b class="title">ISBN:</b>
+     <p>[% book.isbn %]</p>
+    </p>
+    <p>
+     <b class="title">Format:</b>
+     <p>[% book.format.name %]</p>
+    </p>
+    <p>
+     <b class="title">Pages:</b>
+     <p>[% book.pages %]</p>
+    </p>
+    <p>
+     <b class="title">Year:</b>
+     <p>[% book.year %]</p>
+    </p>
+    <br />
+  </div>
 </div>
+
+<hr>
+
+<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all books</a></p>

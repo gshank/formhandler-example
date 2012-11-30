@@ -14,6 +14,6 @@
 
 [% form.render %]
 
-<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">LIST</a></p>
+<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all books</a></p>
 
 </div>
