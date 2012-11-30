@@ -22,9 +22,9 @@
       [% END %]
       <td>
         <div class="btn-group">
-        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id  %]/[% book.title.seo_friendly %]">View</a>
-        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
-        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/delete' %]"><i class="icon-trash"></i> Delete</a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id  %]/[% book.title.seo_friendly %]" rel="tooltip" title="View"><i class="icon-search"></i></a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/edit' %]" rel="tooltip" title="Edit"><i class="icon-pencil"></i></a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/delete' %]" rel="tooltip" title="Delete"><i class="icon-trash"></i></a>
         </div>
       </td>
     </tr>

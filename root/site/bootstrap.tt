@@ -43,6 +43,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap-tooltip.js" type="text/javascript"></script>
     <script src="/static/js/jquery.validate.js" type="text/javascript"></script>
     <script src="/static/js/jquery.validate.bootstrap.js" type="text/javascript"></script>
     <script src="/static/js/jquery.tablesorter.min.js" type="text/javascript"></script>
