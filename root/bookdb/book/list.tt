@@ -21,7 +21,7 @@
       <td>[% book.$column %]</td>
       [% END %]
       <td>
-        <a href="[% '/bookdb/book/' _ book.id  %]">View</a>
+        <a href="[% '/bookdb/book/' _ book.id  %]/[% book.title.seo_friendly %]">View</a>
         <a href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
         <a href="[% '/bookdb/book/' _ book.id _ '/delete' %]">Delete</a>
       </td>

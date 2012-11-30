@@ -95,10 +95,9 @@ sub delete : Chained('item') PathPart('delete') Args(0)
    $c->res->redirect( $c->uri_for('list') );
 }
 
-sub view : Chained('item') PathPart('') Args(0)
+sub view : Chained('item') PathPart('') Args(1)
 {
-   my ( $self, $c, $id ) = @_;
-
+   my ( $self, $c ) = @_;
 }
 
 sub do_return : Chained('item') PathPart('return') Args(0)
