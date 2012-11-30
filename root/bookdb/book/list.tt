@@ -18,12 +18,14 @@
     [% FOR book IN books %]
     <tr>
       [% FOR column IN columns %]
-      <td>[% book.$column %]</td>
+      <td>[% book.$column | html %]</td>
       [% END %]
       <td>
-        <a href="[% '/bookdb/book/' _ book.id  %]/[% book.title.seo_friendly %]">View</a>
-        <a href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
-        <a href="[% '/bookdb/book/' _ book.id _ '/delete' %]">Delete</a>
+        <div class="btn-group">
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id  %]/[% book.title.seo_friendly %]">View</a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/delete' %]"><i class="icon-trash"></i> Delete</a>
+        </div>
       </td>
     </tr>
     [% END %]

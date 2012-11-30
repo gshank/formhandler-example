@@ -1,44 +1,44 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
   <div class="span3 thumbnail">
-    [% IF book.isbn %]<img src="http://covers.openlibrary.org/b/isbn/[% book.isbn %]-L.jpg" />[% END %]
+    [% IF book.isbn %]<img src="http://covers.openlibrary.org/b/isbn/[% book.isbn | html %]-L.jpg" />[% END %]
   </div>
   
   <div class="span8">
     <p>[% message %]</p>
     <p>
      <b class="title">Title:</b>
-     <p>[% book.title %]</p>
+     <p>[% book.title | html %]</p>
     </p>
     <p>
      <b class="title">Author:</b>
-     <p>[% book.author %]</p>
+     <p>[% book.author | html %]</p>
     </p>
     <p>
      <b class="title">Genres:</b>
      [% FOR genre IN book.genres %]
-     <p>[% genre.name %]</p>
+     <p>[% genre.name | html %]</p>
      [% END %]
     </p>
     <p>
      <b class="title">Publisher:</b>
-     <p>[% book.publisher %]</p>
+     <p>[% book.publisher | html %]</p>
     </p>
     <p>
      <b class="title">ISBN:</b>
-     <p>[% book.isbn %]</p>
+     <p>[% book.isbn | html %]</p>
     </p>
     <p>
      <b class="title">Format:</b>
-     <p>[% book.format.name %]</p>
+     <p>[% book.format.name | html %]</p>
     </p>
     <p>
      <b class="title">Pages:</b>
-     <p>[% book.pages %]</p>
+     <p>[% book.pages | html %]</p>
     </p>
     <p>
      <b class="title">Year:</b>
-     <p>[% book.year %]</p>
+     <p>[% book.year | html %]</p>
     </p>
     <br />
   </div>

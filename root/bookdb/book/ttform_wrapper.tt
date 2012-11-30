@@ -1,6 +1,6 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
-<h2>Book Form</h2>
+<h3>Book Form</h3>
 </div>
 <div class="row">
 [% INCLUDE book/ttform.tt %]

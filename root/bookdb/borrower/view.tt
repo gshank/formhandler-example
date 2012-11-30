@@ -1,28 +1,38 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
   <div class="page-header">
-    <h2>Borrower</h2>
+    <h3>Borrower</h3>
   </div>
 </div>
 <div class="row">
 [% FOR column IN columns %]
-    <b class="title">[% column %]</b><br/>
-    [% borrower.$column %]<br/><br/>
+  <p>
+    <b class="title">[% column.as_label %]: </b>
+    [% borrower.$column %]
+  </p>
 [% END %]
+
+[% IF borrower.books.size %]
 <table class="table table-bordered table-striped">
     <tr>
-      <th>Book</th><th>Borrowed</th>
-      <th/>
+      <th>Book</th>
+      <th>Borrowed</th>
+      <th></th>
     </tr>
-[% FOR book IN borrower.books %]
+    [% FOR book IN borrower.books %]
     <tr>
-      <td>[% book.title %]</td>
-      <td>[% book.borrowed %]</td>
+      <td>[% book.title | html %]</td>
+      <td>[% book.borrowed | html %]</td>
       <td><a href="[% '/bookdb/book/' _ book.id %]">View</a>
           <a href="[% '/bookdb/book/' _ book.id _ '/return' %]">Return</a></td>
     </tr>
-[% END %]
+    [% END %]
 </table>
+[% ELSE %]
+<div class="alert alert-info">
+  No borrowed books.
+</div>
+[% END %]
 
 <p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all borrowers</a></p>
 

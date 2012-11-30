@@ -109,7 +109,7 @@ sub do_return : Chained('item') PathPart('return') Args(0)
    $book->borrower(undef);
    $book->update;
 
-   $c->res->redirect( '/book/' . $book->id );
+   $c->res->redirect( '/bookdb/book/' . $book->id );
    $c->detach;
 }
 

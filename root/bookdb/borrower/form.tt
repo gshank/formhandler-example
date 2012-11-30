@@ -1,8 +1,8 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
-<div class="page-header">
-<h2>Borrower</h2>
-</div>
+  <div class="page-header">
+    <h3>Borrower</h3>
+  </div>
 </div>
 <div class="row">
 <p>[%message%]</p>

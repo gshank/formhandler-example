@@ -1,7 +1,7 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row">
 <div class="page-header">
-<h2>Book Form</h2>
+<h3>Book Form</h3>
 </div>
 </div>
 <div class="row">
