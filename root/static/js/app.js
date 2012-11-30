@@ -11,4 +11,7 @@ $(document).ready(function() {
     });
   }
 
+  if ($('#cover').height() == 0) {
+    $('#cover').attr('src', '/static/images/cover_not_found.jpg');
+  }
 });
