@@ -1,9 +1,12 @@
 <div class="page-header">
-  <h2>HTML::FormHandler</h2>
+  <h2>HTML::FormHandler &amp; Catalyst Example</h2>
 </div>
 
 <p>This application demonstrates the use of HTML::FormHandler, a Perl form package.<p>
-<p>See: <a href="http://metacpan.org/module/HTML::FormHandler">HTML::FormHandler</a><p>
+<p>See: 
+  <a href="http://metacpan.org/module/HTML::FormHandler">HTML::FormHandler</a>, 
+  <a href="http://metacpan.org/module/Catalyst">Catalyst</a>
+<p>
 
 <p>HTML::FormHandler maintains a <b>clean separation</b> between form <b>construction</b>
 and form <b>rendering</b>. It allows you to define your forms and fields in a
@@ -12,7 +15,7 @@ can define custom renderers for any kind of presentation.</p>
 
 <p>HTML::FormHandler allows you to define form fields and validators. It can
 be used for both database and non-database forms, and will
-automatically update or create rows in a database. It can be used
+<b>automatically update or create rows in a database</b>. It can be used
 to process structured data that doesn't come from an HTML form.</p>
 
 <p>One of its goals is to keep the controller/application program interface as
