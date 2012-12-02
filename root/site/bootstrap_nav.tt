@@ -1,10 +1,8 @@
-<div class="row">
-  <div class="page-header">
-    <h3>Forms using the Twitter Bootstrap framework</h3>
-  </div>
-  <ul class="nav nav-tabs">
-    <li[% ' class="active"' IF (c.req.path.match("bootstrap/\$")) %]><a href="/bootstrap/">Bootstrap Home</a></li>
-    <li[% ' class="active"' IF (c.req.path.match("bootstrap/basic")) %]><a href="/bootstrap/basic">Basic Form</a></li>
-    <li[% ' class="active"' IF (c.req.path.match("bootstrap/controls")) %]><a href="/bootstrap/controls">Bootstrap Controls Form</a></li>
-  </ul>
+<div class="page-header">
+  <h3>Forms using the Twitter Bootstrap framework</h3>
 </div>
+<ul class="nav nav-tabs">
+  <li[% ' class="active"' IF (c.req.path.match("bootstrap/\$")) %]><a href="/bootstrap/">Bootstrap Home</a></li>
+  <li[% ' class="active"' IF (c.req.path.match("bootstrap/basic")) %]><a href="/bootstrap/basic">Basic Form</a></li>
+  <li[% ' class="active"' IF (c.req.path.match("bootstrap/controls")) %]><a href="/bootstrap/controls">Bootstrap Controls Form</a></li>
+</ul>

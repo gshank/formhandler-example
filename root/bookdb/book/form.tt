@@ -1,9 +1,10 @@
 [% PROCESS site/book_nav.tt %]
-<div class="row">
-<div class="page-header">
-<h3>Book Form</h3>
+<div class="row-fluid">
+  <div class="page-header">
+    <h3>Book Form</h3>
+  </div>
 </div>
-</div>
-<div class="row">
+
+<div class="row-fluid">
 [% form.render %]
 </div>

@@ -1,10 +1,10 @@
 [% PROCESS site/book_nav.tt %]
-<div class="row">
+<div class="row-fluid">
   <div class="page-header">
     <h3>List of Books <small>(total [% books.size %] books)</h3>
   </div>
 </div>
-<div class="row">
+<div class="row-fluid">
 <table id="books" class="table table-bordered table-striped tablesorter" summary="The list of all books">
   <thead>
     <tr>

@@ -9,7 +9,7 @@ sub build_form_tags {
     # wrap the form with outside div (form_wrapper = 1, wrapper_tag = div)
     # wrap the fields (to get label) but with no wrapping div ( wrapper_tag => 0 )
     {   wrapper_tag => 'div',
-        before => qq{<div class="row"><div class="span3"><p>Form completely rendered with FormHandler.</p></div>\n},
+        before => qq{<div class="row-fluid"><div class="span3"><p>Form completely rendered with FormHandler.</p></div>\n},
         after => '</div>',
     }
 }

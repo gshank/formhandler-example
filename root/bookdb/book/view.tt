@@ -1,5 +1,5 @@
 [% PROCESS site/book_nav.tt %]
-<div class="row">
+<div class="row-fluid">
   <div class="span3 thumbnail">
     [% IF book.isbn %]<img id="cover" src="http://covers.openlibrary.org/b/isbn/[% book.isbn | html %]-L.jpg" />[% END %]
   </div>

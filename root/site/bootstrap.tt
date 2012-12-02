@@ -16,28 +16,50 @@
     <link href="/static/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/static/css/tablesorter.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="/static/ico/favicon.ico">
   </head>
 
   <!-- body data-spy="scroll" data-target=".subnav" data-offset="50"-->
-  <body data-offset="50">
-  <div class="container">
-  <div class="row">
-    <div class="page-header">
-      <h2>HTML::FormHandler Catalyst Examples</h2>
-    </div>
-  </div>
-  <div class="row">
-    <ul class="nav nav-pills">
-     <li[% ' class="active"' IF (c.req.path.match("\^\$")) %]><a href="[% c.uri_for('/') %]">Home</a></li>
-     <li[% ' class="active"' IF (c.req.path.match("^bookdb")) %]><a href="[% c.uri_for('/bookdb/book/') %]">Book Example</a></li>
-     <li[% ' class="active"' IF (c.req.path.match("^bootstrap")) %]><a href="[% c.uri_for('/bootstrap/') %]">Bootstrap Examples</a></li>
-    </ul>
-  </div>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand pull-left" href="/">HTML::FormHandler</a>
 
-  [% content %]
+          <div class="nav-collapse">
+            <ul class="nav pull-left">
+              <li><a href="/"><i class="icon-white icon-home"></i> Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Menu</li>
+            <li[% ' class="active"' IF (c.req.path.match("\^\$")) %]><a href="[% c.uri_for('/') %]">Home</a></li>
+            <li[% ' class="active"' IF (c.req.path.match("^bookdb")) %]><a href="[% c.uri_for('/bookdb/book/') %]">Book Example</a></li>
+            <li[% ' class="active"' IF (c.req.path.match("^bootstrap")) %]><a href="[% c.uri_for('/bootstrap/') %]">Bootstrap Examples</a></li>
+          </ul>
+          </div>
+        </div>
+
+        <div class="span10">
+        [% content %]
+        </div>
+      </div>
   </div>
     <!-- Le javascript
     ================================================== -->

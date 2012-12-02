@@ -47,7 +47,7 @@ sub do_list
    my ( $self, $c ) = @_;
 
    my $books = [ $c->model('DB::Book')->all ];
-   my @columns = ( 'title', 'author_list', 'publisher', 'year' );
+   my @columns = ( 'title', 'publisher', 'year', 'pages' );
    $c->stash( books => $books, columns => \@columns,
               template => 'bookdb/book/list.tt' );
 }

@@ -1,7 +1,10 @@
 [% INCLUDE site/bootstrap_nav.tt %]
-<h3>Basic form</h3>
 
-<div class="row">
+<div class="page-header">
+  <h3>Basic form</h3>
+</div>
+
+<div class="row-fluid">
   <div class="span3">
     <p>Rendered entirely with HTML; no HFH rendering at all</p>
   </div>
@@ -17,10 +20,7 @@
   </div>
 </div> <!-- /row -->
 
-<div class="row">
-</div>
-
-<div class="row">
+<div class="row-fluid">
   <div class="span3">
     <p>Layout is done in the template; the form elements are rendered with FormHandler</p>
   </div>
@@ -35,8 +35,5 @@
     </form>
   </div>
 </div> <!-- /row -->
-
-<div class="row">
-</div>
 
 [% form3.render %]
