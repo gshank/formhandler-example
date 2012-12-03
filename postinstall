@@ -16,8 +16,8 @@ for my $book (@{$data->{books}}) {
     my $exists = $dbh->selectrow_array('SELECT * FROM book WHERE isbn = ' . $dbh->quote($book->{isbn}));
 
     if (! $exists) {
-        my $sth = $dbh->prepare('INSERT INTO book (title, isbn, publisher, year, pages) VALUES (?, ?, ?, ?, ?)');
-        $sth->execute($book->{title}, $book->{isbn}, $book->{publisher}, $book->{publicationYear}, int(rand(1000)) );
+        my $sth = $dbh->prepare('INSERT INTO book (title, isbn, publisher, year, pages, borrower) VALUES (?, ?, ?, ?, ?, ?)');
+        $sth->execute($book->{title}, $book->{isbn}, $book->{publisher}, $book->{publicationYear}, int(rand(1000)), 1);
     }
     last if $count-- == 0;
 }
