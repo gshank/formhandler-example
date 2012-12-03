@@ -78,7 +78,8 @@ sub form
 {
    my ( $self, $c ) = @_;
 
-   my $result = $self->edit_form->run( item => $c->stash->{book},
+   my $result = $self->edit_form->run( 
+      item   => $c->stash->{book},
       params => $c->req->parameters,
       action => $c->uri_for($c->action, $c->req->captures ),
    );

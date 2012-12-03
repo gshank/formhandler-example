@@ -1,5 +1,10 @@
 =head1 Getting started
 
+Clone this repository:
+
+  $ git clone https://github.com/dpetrov/formhandler-example.git
+  $ cd formhandler-example
+
 Install the project dependencies:
 
   $ cpanm --installdeps .

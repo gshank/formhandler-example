@@ -25,6 +25,8 @@ requires 'DBD::SQLite';
 requires 'HTML::FormHandlerX::Form::JQueryValidator';
 requires 'File::Slurp';
 requires 'JSON';
+requires 'Business::ISBN';
+requires 'GD::Barcode::EAN13';
 
 test_requires 'Test::More' => '0.88';
 catalyst;

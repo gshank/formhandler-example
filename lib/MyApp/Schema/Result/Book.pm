@@ -1,6 +1,8 @@
 package MyApp::Schema::Result::Book;
 
 use Moose;
+use MIME::Base64;
+use Business::ISBN 'valid_isbn_checksum';
 
 use base 'DBIx::Class';
 
@@ -102,6 +104,16 @@ sub author_list {
         push @author_names, $author->name;
     }
     return join(', ', @author_names);
+}
+
+sub barcode {
+    my $self = shift;
+
+    if ($self->isbn) {
+        my $isbn = Business::ISBN->new($self->isbn) or return;
+        return encode_base64($isbn->png_barcode);
+    }
+    return;
 }
 
 1;

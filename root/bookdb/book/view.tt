@@ -1,18 +1,22 @@
 [% PROCESS site/book_nav.tt %]
 <div class="row-fluid">
   <div class="span3 thumbnail">
-    [% IF book.isbn %]<img id="cover" src="http://covers.openlibrary.org/b/isbn/[% book.isbn | html %]-L.jpg" />[% END %]
+    [% IF book.isbn %]
+      <img id="cover" src="http://covers.openlibrary.org/b/isbn/[% book.isbn | html %]-L.jpg" />
+    [% END %]
+    [% IF book.barcode %]
+      <br>
+      <img src="data:image/gif;base64,[% book.barcode %]" />
+    [% END %]
   </div>
   
   <div class="span8">
     <p>[% message %]</p>
     <p>
-     <b class="title">Title:</b>
-     <p>[% book.title | html %]</p>
+     <b class="title">Title:</b> [% book.title | html %]
     </p>
     <p>
-     <b class="title">Author:</b>
-     <p>[% book.author | html %]</p>
+     <b class="title">Author:</b> [% book.author | html %]
     </p>
     <p>
      <b class="title">Genres:</b>
@@ -21,24 +25,19 @@
      [% END %]
     </p>
     <p>
-     <b class="title">Publisher:</b>
-     <p>[% book.publisher | html %]</p>
+     <b class="title">Publisher:</b> [% book.publisher | html %]
     </p>
     <p>
-     <b class="title">ISBN:</b>
-     <p>[% book.isbn | html %]</p>
+     <b class="title">ISBN:</b> [% book.isbn | html %]
     </p>
     <p>
-     <b class="title">Format:</b>
-     <p>[% book.format.name | html %]</p>
+     <b class="title">Format:</b> [% book.format.name | html %]
     </p>
     <p>
-     <b class="title">Pages:</b>
-     <p>[% book.pages | html %]</p>
+     <b class="title">Pages:</b> [% book.pages | html %]
     </p>
     <p>
-     <b class="title">Year:</b>
-     <p>[% book.year | html %]</p>
+     <b class="title">Year:</b> [% book.year | html %]
     </p>
     <br />
   </div>
