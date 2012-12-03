@@ -24,6 +24,7 @@
 
   <!-- body data-spy="scroll" data-target=".subnav" data-offset="50"-->
   <body>
+    <a href="https://github.com/dpetrov/formhandler-example"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1031;" src="/static/images/fork-on-github.png" alt="Fork me on GitHub" /></a>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
