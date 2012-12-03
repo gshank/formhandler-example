@@ -5,6 +5,7 @@ use warnings;
 
 use base 'Catalyst::View::TT';
 use Template::Stash;
+use Template::Context;
 
 __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.tt',
@@ -18,6 +19,17 @@ sub as_label {
     my $column = shift;
     $column =~ s/_/ /g;
     return ucfirst($column);
+}
+
+Template::Stash->define_vmethod('scalar', 'seo_friendly' => \&seo_friendly);
+
+sub seo_friendly {
+    my $title = shift;
+    $title =  lc($title);
+    $title =~ s/[^\w\-]+/\-/g;
+    $title =~ s/\-{2,}/\-/g;
+    $title =~ s/^\-|\-$//g;
+    return lc($title);
 }
 
 =head1 NAME

@@ -1,10 +1,10 @@
 [% PROCESS site/book_nav.tt %]
-<div class="row">
-<div class="page-header">
-<h2>List of Borrowers</h2>
+<div class="row-fluid">
+  <div class="page-header">
+    <h3>List of Borrowers</h3>
+  </div>
 </div>
-</div>
-<div class="row">
+<div class="row-fluid">
 <table id="borrowers" class="table table-bordered table-striped tablesorter">
   <thead>
     <tr>
@@ -18,16 +18,16 @@
     [% FOR borrower IN borrowers %]
     <tr>
       [% FOR column IN columns %]
-        <td>[% borrower.$column %]</td>
+        <td>[% borrower.$column | html %]</td>
       [% END %]
       <td>
-        <a href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
-        <a href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
-        <a href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
+        <a class="btn btn-mini" href="[% '/bookdb/borrower/' _ borrower.id %]">View</a>
+        <a class="btn btn-mini" href="[% '/bookdb/borrower/' _ borrower.id _ '/edit' %]">Edit</a>
+        <a class="btn btn-mini btn-danger" href="[% '/bookdb/borrower/' _ borrower.id _ '/delete' %]">Destroy</a>
       </td>
     </tr>
     [% END %]
   </tbody>
 </table>
-<p><a class="btn btn-primary" href="/bookdb/borrower/add">+ ADD</a></p>
+<p><a class="btn btn-primary" href="/bookdb/borrower/add">Add borrower</a></p>
 </div>

@@ -1,5 +1,4 @@
 [% INCLUDE site/bootstrap_nav.tt %]
-<div class="row">
+
 <p>Bootstrap 2.0 Examples rendered using FormHandler.</p>
 <p>Each example is displayed using pure HTML, using FormHandler to render only the form elements, and rendered completely by FormHandler.</p>
-</div>

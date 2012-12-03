@@ -47,7 +47,7 @@ sub do_list
    my ( $self, $c ) = @_;
 
    my $books = [ $c->model('DB::Book')->all ];
-   my @columns = ( 'title', 'author_list', 'publisher', 'year' );
+   my @columns = ( 'title', 'publisher', 'year', 'pages' );
    $c->stash( books => $books, columns => \@columns,
               template => 'bookdb/book/list.tt' );
 }
@@ -78,7 +78,8 @@ sub form
 {
    my ( $self, $c ) = @_;
 
-   my $result = $self->edit_form->run( item => $c->stash->{book},
+   my $result = $self->edit_form->run( 
+      item   => $c->stash->{book},
       params => $c->req->parameters,
       action => $c->uri_for($c->action, $c->req->captures ),
    );
@@ -95,10 +96,9 @@ sub delete : Chained('item') PathPart('delete') Args(0)
    $c->res->redirect( $c->uri_for('list') );
 }
 
-sub view : Chained('item') PathPart('') Args(0)
+sub view : Chained('item') PathPart('') Args(1)
 {
-   my ( $self, $c, $id ) = @_;
-
+   my ( $self, $c ) = @_;
 }
 
 sub do_return : Chained('item') PathPart('return') Args(0)
@@ -110,7 +110,7 @@ sub do_return : Chained('item') PathPart('return') Args(0)
    $book->borrower(undef);
    $book->update;
 
-   $c->res->redirect( '/book/' . $book->id );
+   $c->res->redirect( '/bookdb/book/' . $book->id );
    $c->detach;
 }
 

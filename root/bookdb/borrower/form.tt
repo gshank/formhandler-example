@@ -1,19 +1,19 @@
 [% PROCESS site/book_nav.tt %]
-<div class="row">
-<div class="page-header">
-<h2>Borrower</h2>
+<div class="row-fluid">
+  <div class="page-header">
+    <h3>Borrower</h3>
+  </div>
 </div>
-</div>
-<div class="row">
-<p>[%message%]</p>
-[% FOR field IN form.error_fields %]
-  [% FOR error IN field.errors %]
+<div class="row-fluid">
+  <p>[%message%]</p>
+  [% FOR field IN form.error_fields %]
+    [% FOR error IN field.errors %]
     <div class='error' id=error>[% error %] </div>
+    [% END %]
   [% END %]
-[% END %]
+  
+  [% form.render %]
 
-[% form.render %]
-
-<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">LIST</a></p>
+  <p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all books</a></p>
 
 </div>

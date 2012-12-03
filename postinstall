@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use DBI;
+use JSON;
+use FindBin qw/$Bin/;
+use File::Slurp;
+
+our $dbh = DBI->connect('dbi:SQLite:db/book.db') or die $!;
+
+my $json  = read_file("$Bin/db/book.json");
+my $data  = JSON->new->decode($json);
+my $count = 50;
+
+for my $book (@{$data->{books}}) {
+    my $exists = $dbh->selectrow_array('SELECT * FROM book WHERE isbn = ' . $dbh->quote($book->{isbn}));
+
+    if (! $exists) {
+        my $sth = $dbh->prepare('INSERT INTO book (title, isbn, publisher, year, pages, borrower) VALUES (?, ?, ?, ?, ?, ?)');
+        $sth->execute($book->{title}, $book->{isbn}, $book->{publisher}, $book->{publicationYear}, int(rand(1000)), 1);
+    }
+    last if $count-- == 0;
+}

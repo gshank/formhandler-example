@@ -1,10 +1,10 @@
 [% PROCESS site/book_nav.tt %]
-<div class="row">
-<div class="page-header">
-<h2>List of Books</h2>
+<div class="row-fluid">
+  <div class="page-header">
+    <h3>List of Books <small>(total [% books.size %] books)</h3>
+  </div>
 </div>
-</div>
-<div class="row">
+<div class="row-fluid">
 <table id="books" class="table table-bordered table-striped tablesorter" summary="The list of all books">
   <thead>
     <tr>
@@ -18,16 +18,18 @@
     [% FOR book IN books %]
     <tr>
       [% FOR column IN columns %]
-      <td>[% book.$column %]</td>
+      <td>[% book.$column | html %]</td>
       [% END %]
       <td>
-        <a href="[% '/bookdb/book/' _ book.id  %]">View</a>
-        <a href="[% '/bookdb/book/' _ book.id _ '/edit' %]">Edit</a>
-        <a href="[% '/bookdb/book/' _ book.id _ '/delete' %]">Delete</a>
+        <div class="btn-group">
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id  %]/[% book.title.seo_friendly %]" rel="tooltip" title="View"><i class="icon-search"></i></a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/edit' %]" rel="tooltip" title="Edit"><i class="icon-pencil"></i></a>
+        <a class="btn btn-mini" href="[% '/bookdb/book/' _ book.id _ '/delete' %]" rel="tooltip" title="Delete"><i class="icon-trash"></i></a>
+        </div>
       </td>
     </tr>
     [% END %]
   </tbody>
 </table>
-<p><a class="btn btn-primary" href="[% '/bookdb/book/create' %]">+ ADD</a></p>
+<p><a class="btn btn-primary" href="[% '/bookdb/book/create' %]">Add book</a></p>
 </div>
