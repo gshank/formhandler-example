@@ -1,9 +1,9 @@
 =head1 Getting started
 
-=head2 Install the project dependencies:
+Install the project dependencies:
 
   $ cpanm --installdeps .
 
-=head2 Start server on port 5001 (-d for debug mode)
+Start server on port 5001:
 
-  $ plackup -p 5001 -d -r
+  $ plackup -p 5001 -r
