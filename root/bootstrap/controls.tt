@@ -1,9 +1,9 @@
 [% INCLUDE site/bootstrap_nav.tt %]
 <div class="page-header">
-<h3>Bootstrap Controls form</h3>
+  <h3>Bootstrap Controls form</h3>
 </div>
 
-<div class="row">
+<div class="row-fluid">
   <div class="span3">
     <p>Rendered entirely with HTML; no HTML::FormHandler rendering at all</p>
   </div>
@@ -74,7 +74,7 @@
 
 <hr>
 
-<div class="row">
+<div class="row-fluid">
   <div class="span3">
     <p>Layout is done in the template; the form elements are rendered with FormHandler</p>
   </div>
@@ -133,7 +133,7 @@
 
 <hr>
 
-<div class="row">
+<div class="row-fluid">
   <div class="span3">
      <p>Rendered entirely with FormHandler!</p>
   </div>

@@ -1,0 +1,18 @@
+=head1 Getting started
+
+Clone this repository:
+
+  $ git clone https://github.com/dpetrov/formhandler-example.git
+  $ cd formhandler-example
+
+Install the project dependencies:
+
+  $ cpanm --installdeps .
+
+Populate initial data
+
+  $ perl postinstall
+
+Start server on port 5001:
+
+  $ plackup -p 5001 -r

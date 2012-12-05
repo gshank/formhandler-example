@@ -45,9 +45,10 @@ has_field 'publisher' => (
 
 # has_many relationship pointing to mapping table
 has_field 'isbn' => (
-    type   => 'Text',
-    label  => 'ISBN',
-    unique => 1,
+    type     => 'Text',
+    label    => 'ISBN',
+    unique   => 1,
+    required => 1,
 );
 has_field 'format' => (
     type     => 'Select',
@@ -69,6 +70,10 @@ has_field 'comment' => (
     type  => 'Text',
 );
 
+has_field 'borrower' => (
+    type  => 'Select',
+);
+
 has_field 'user_updated' => (
     type => 'Boolean', option_label => ' ',
 );
@@ -79,6 +84,14 @@ sub validate_year {
     my ( $self, $field ) = @_;
     $field->add_error('Invalid year')
       if ( ( $field->value > 3000 ) || ( $field->value < 1600 ) );
+}
+
+sub options_borrower {
+    my $self = shift;
+    return unless $self->schema;
+    my @borrowers = $self->schema->resultset('Borrower')->all;
+    my @options = map { { value => $_->id, label => $_->name } } @borrowers;
+    return @options;
 }
 
 =head1 AUTHOR

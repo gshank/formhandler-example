@@ -23,6 +23,12 @@ requires 'Catalyst::View::TT';
 requires 'Catalyst::Model::DBIC::Schema';
 requires 'DBD::SQLite';
 requires 'HTML::FormHandlerX::Form::JQueryValidator';
+requires 'File::Slurp';
+requires 'JSON';
+requires 'MIME::Base64';
+requires 'GD';
+requires 'GD::Barcode::EAN13';
+requires 'Business::ISBN';
 
 test_requires 'Test::More' => '0.88';
 catalyst;

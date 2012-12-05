@@ -1,0 +1,25 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.right {
+    text-align: right;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.middle {
+    vertical-align: middle;
+}
+.date {
+    min-width: 70px;
+}
+.affix {
+  position: fixed;
+}
