@@ -63,6 +63,10 @@ has_field 'addresses.country' => (
     empty_select => '-- Choose a Country --',
 );
 
+has_field 'addresses.address_id' => (
+    type => 'PrimaryKey',
+);
+
 has_field 'add_address' => (
     type => 'AddElement',
     value => 'Add Address',
